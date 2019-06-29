@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    name: wujiatong
+    url: jdbc:mysql://localhost:3306/wujiatong?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root!2018
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  liquibase:
+      change-log: classpath:db/changelog/db.changelog-master.xml
+      enabled: true
+fastboot:
+    # CORS is only enabled by default with the "dev" profile, so BrowserSync can access the API
+    cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+        allowed-headers: "*"
+        exposed-headers: "Authorization,Link,X-Total-Count"
+        allow-credentials: true
+        max-age: 1800
+
+
