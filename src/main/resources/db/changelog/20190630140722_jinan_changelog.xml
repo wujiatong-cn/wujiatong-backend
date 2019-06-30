@@ -1,0 +1,108 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="demo" id="1561903646169-2">
+        <createTable tableName="city">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(20)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="name" type="VARCHAR(30)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="data_source" type="VARCHAR(127)"/>
+            <column name="valid" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="demo" id="1561903646169-4">
+        <createTable tableName="goods">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="specification" type="VARCHAR(20)"/>
+            <column name="unit" type="VARCHAR(20)"/>
+            <column name="goods_category_id" type="BIGINT"/>
+            <column name="picture" type="VARCHAR(127)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="demo" id="1561903646169-5">
+        <createTable tableName="goods_category">
+            <column name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(30)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="summary" type="TEXT"/>
+            <column name="picture" type="VARCHAR(127)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="demo" id="1561903646169-6">
+        <createTable tableName="goods_market_rel">
+            <column name="goods_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="market_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="demo" id="1561903646169-7">
+        <createTable tableName="market">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="region_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="demo" id="1561903646169-10">
+        <createTable tableName="region">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="parent_id" type="BIGINT"/>
+            <column name="remark" type="VARCHAR(60)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="demo" id="1561903646169-13">
+        <createIndex indexName="fk_authority_name" tableName="user_authority">
+            <column name="authority_name"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="demo" id="1561903646169-14">
+        <createIndex indexName="idx_market_name" tableName="market">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="demo" id="1561903646169-17">
+        <createIndex indexName="idx_region_name" tableName="region">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="1561903646169-18" author="demo">
+        <insert tableName="city">
+            <column name="id" value="1"/>
+            <column name="code" value="jinan"/>
+            <column name="name" value="济南"/>
+            <column name="data_source" value="http://119.163.120.130:88/allow/allow_1/Default.aspx"/>
+            <column name="valid" valueBoolean="true" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>

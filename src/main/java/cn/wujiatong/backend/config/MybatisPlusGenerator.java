@@ -49,7 +49,7 @@ public class MybatisPlusGenerator {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("fastboot");
+        gc.setAuthor("wujiatong");
         gc.setOpen(false);
         gc.setFileOverride(true);
         //mapper.xml配置
@@ -60,7 +60,7 @@ public class MybatisPlusGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/fastboot?serverTimezone=GMT%2B8&useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://localhost:3306/wujiatong?serverTimezone=GMT%2B8&useUnicode=true&useSSL=false&characterEncoding=utf8");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
@@ -69,9 +69,9 @@ public class MybatisPlusGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("net.ioage.app.fastboot");
+        pc.setParent("cn.wujiatong.backend.module");
         //模块名
-        pc.setModuleName("auth");
+        pc.setModuleName("jinan");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -102,10 +102,10 @@ public class MybatisPlusGenerator {
         strategy.setEntityLombokModel(true);
 //        strategy.setSuperControllerClass("com.baomidou.mybatisplus.samples.generator.common.BaseController");
         //包含的表名，支持正则表达式
-        strategy.setInclude("authority");
+        strategy.setInclude("city,goods,goods_category,goods_market_rel,market,region".split(","));
 //        strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix(pc.getModuleName() + "_");
+//        strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);
         // 选择 freemarker 引擎需要指定如下加，注意 pom 依赖必须有！
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());

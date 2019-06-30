@@ -30,4 +30,9 @@ public interface FastBootDefaults {
             String key = null;
         }
     }
+
+    interface SnowFlake {
+        long dataCenter = 1L;
+        long machine = 1L;
+    }
 }

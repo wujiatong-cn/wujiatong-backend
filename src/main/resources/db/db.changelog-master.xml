@@ -6,4 +6,5 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <include file="db/changelog/00000000000000_initial_schema.xml"></include>
+    <include file="db/changelog/20190630140722_jinan_changelog.xml"></include>
 </databaseChangeLog>

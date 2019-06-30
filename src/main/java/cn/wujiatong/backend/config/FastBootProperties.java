@@ -152,4 +152,31 @@ public class FastBootProperties {
             }
         }
     }
+
+    private final SnowFlake snowFlake = new SnowFlake();
+
+    public SnowFlake getSnowFlake() {
+        return snowFlake;
+    }
+
+    public static class SnowFlake {
+        public long getDataCenter() {
+            return dataCenter;
+        }
+
+        public void setDataCenter(long dataCenter) {
+            this.dataCenter = dataCenter;
+        }
+
+        public long getMachine() {
+            return machine;
+        }
+
+        public void setMachine(long machine) {
+            this.machine = machine;
+        }
+
+        private long dataCenter = FastBootDefaults.SnowFlake.dataCenter;
+        private long machine = FastBootDefaults.SnowFlake.machine;
+    }
 }
