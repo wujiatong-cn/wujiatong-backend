@@ -26,3 +26,8 @@ fastboot:
     machine: 3
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
+swagger:
+  enabled: false
+  title: Wujiatong.CN API Doc
+  description: 物价通API文档
+  version: 1.0

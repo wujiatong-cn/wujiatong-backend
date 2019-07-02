@@ -126,6 +126,11 @@
             <artifactId>jjwt-jackson</artifactId>
             <version>0.10.6</version>
         </dependency>
+        <dependency>
+            <groupId>com.spring4all</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>1.9.0.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -146,19 +151,19 @@
                 </configuration>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <!-- xml放在java目录下-->
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-            <!--指定资源的位置（xml放在resources下，可以不用指定）-->
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--&lt;!&ndash; xml放在java目录下&ndash;&gt;-->
+                <!--<directory>src/main/java</directory>-->
+                <!--<includes>-->
+                    <!--<include>**/*.xml</include>-->
+                <!--</includes>-->
+            <!--</resource>-->
+            <!--&lt;!&ndash;指定资源的位置（xml放在resources下，可以不用指定）&ndash;&gt;-->
+            <!--<resource>-->
+                <!--<directory>src/main/resources</directory>-->
+            <!--</resource>-->
+        <!--</resources>-->
     </build>
 
 </project>

@@ -17,5 +17,6 @@ fastboot:
         exposed-headers: "Authorization,Link,X-Total-Count"
         allow-credentials: true
         max-age: 1800
-
+swagger:
+  enabled: true
 

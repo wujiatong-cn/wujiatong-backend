@@ -4,6 +4,7 @@ package cn.wujiatong.backend.auth.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Controller;
  * @author fastboot
  * @since 2019-05-26
  */
-@Controller
+@RestController
 @RequestMapping("/api/auth/user-authority")
 public class UserAuthorityController {
 
